@@ -6,6 +6,10 @@
 }
 .hero img {
     margin-top: 95px;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
 }
 .hero h1 {
     text-align: center;
