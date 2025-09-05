@@ -8,7 +8,7 @@ const Hero = () => {
     <div id='home' className="hero">
       <img src={profile_img} alt="" />
       <h1>
-        <span>I'm Khyle Macasilhig,</span> a Second Year College Web Developer
+        <span>Hi I'm Khyle Macasilhig,</span> a Second Year College Web Developer
       </h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis

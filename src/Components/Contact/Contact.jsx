@@ -7,6 +7,7 @@ import call_icon from '../../assets/call_icon.svg'
 
 const Contact = () => {
 
+  // contact info message onSub
     const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -16,19 +17,28 @@ const Contact = () => {
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: json
-    }).then((res) => res.json());
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      }).then((res) => res.json());
 
-    if (res.success) {
-      console.log("Success", res);
+      if (res.success) {
+        alert("✅ Message sent successfully!");
+        event.target.reset(); // clear form
+      } else {
+        alert("❌ Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      alert("⚠️ Something went wrong. Please check your connection.");
     }
   };
+    // Upto here
+
 
   return (
     <div id='contact' className='contact'>
@@ -52,7 +62,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <form onSubmit={onSubmit} className="contact-right">
+            <form onSubmit={onSubmit} className="contact-right">  {/*Replace onSubmit for new One*/}
                 <label htmlFor="">Your Name</label>
                 <input type="text" placeholder='Enter your Name' name='name' />
                 <label htmlFor="">Your Email</label>
