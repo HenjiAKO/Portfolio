@@ -3,9 +3,9 @@
   position: sticky;
   top: 0;
   overflow: hidden;
-  z-index: 1000;
-  background: #161513;
   align-items: center;
+  z-index: 1000;
+  background-color: #161513;
   justify-content: space-between;
   margin: 15px 170px;
   padding: 15px 20px;
